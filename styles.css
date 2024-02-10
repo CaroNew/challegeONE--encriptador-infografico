@@ -43,3 +43,7 @@ body{
     padding: 2px 15px;
     background-color: #f18fdb;
 }
+
+#text-result{
+    display: none;
+}
