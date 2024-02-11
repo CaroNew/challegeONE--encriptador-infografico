@@ -2,6 +2,7 @@ let textInput = document.getElementById('textarea-style');
 let btn = document.getElementById('encrypt-button');
 let btn2 = document.getElementById('decrypt-button');
 
+
 function encrypt(msg, keys){
     let strSplit = msg.split("");
     let encryptedMsg = ""
@@ -50,14 +51,30 @@ function convertText(message, fun){
     }
   }
 
-
+function emptyInputAlert(input){
+    if(!input){
+        alert('Por favor ingrese un valor!')
+    }
+    return Boolean(!input);
+}
 
 function getValueEncrypt(input){
+
+    if(emptyInputAlert(input)){
+        return;
+    }
+    
     let encryptedmsg = convertText(input, 'encrypt');
     console.log(encryptedmsg);
+    return encryptedmsg;
 }
 
 function getValuedecrypt(input){
+
+    if(emptyInputAlert(input)){
+        return;
+    }
+
     let encryptedmsg = convertText(input, 'decrypt');
     console.log(encryptedmsg);
 }
