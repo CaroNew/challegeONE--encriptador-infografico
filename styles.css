@@ -44,6 +44,6 @@ body{
     background-color: #f18fdb;
 }
 
-#text-result{
+.hide{
     display: none;
 }
