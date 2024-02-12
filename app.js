@@ -67,7 +67,7 @@ function addOutput(output, text){
     output.replaceChildren();
 
     const p = document.createElement('p');
-    p.className = 'user-input';
+    p.className = 'user-output';
     p.innerHTML = text;
     output.appendChild(p);
 
@@ -79,7 +79,7 @@ function getValueEncrypt(input){
     if(emptyInputAlert(input)){
         return;
     }
-
+    
     outputText.replaceChildren();
     
     let encryptedmsg = convertText(input, 'encrypt');

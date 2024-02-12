@@ -6,29 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <title>My Secret Message</title>
 </head>
 
 <body>
     <header>
-        <div id="header-style">
+        <div>
+            <img src="stars_1229348.png" alt="">
+            <!-- <a href="https://www.freepik.es/icono/estrellas_1229348#fromView=search&track=sph&page=2&position=71&uuid=8fc94ccd-385c-40b0-a956-0dc5cae1801a">Icono de srip</a> -->
         </div>
     </header>
     <main id="main-style">
-
         <section>
             <div id="title-style">
                 <h1>My Secret Message</h1>
             </div>
             <div id="textarea-box">
-                <textarea name="encrypt-text" id="textarea-style" cols="50" rows="22" placeholder="Write your text here!"></textarea>
+                <textarea name="encrypt-text" id="textarea-style" cols="50" rows="22"
+                    placeholder="Ingrese el texto aquí"></textarea>
             </div>
             <div id="button-box">
                 <button id="encrypt-button" class="button-style">Encrypt</button>
                 <button id="decrypt-button" class="button-style">Desencrypt</button>
             </div>
         </section>
-        <div id="text-result" class="hide"></div>
+        <div id="text-result" class="hide">
+        </div>
     </main>
     <script src="app.js"></script>
 </body>
