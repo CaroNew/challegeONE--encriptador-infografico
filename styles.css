@@ -6,7 +6,7 @@ body{
 #main-style{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -30,8 +30,29 @@ img{
     border: none;   
     border-radius: 10px;
     padding: 5px 5px;
+    background-color: #F2B1E3;
+    outline: none;
 }
 
+textarea::placeholder {
+    color:#92347e;
+    font-size: 1.3em;
+  }
+
+.button-style{
+    min-width: 130px;
+    height: 35px;
+    margin-right: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    border-radius: 15px;
+    padding: 2px 20px;
+    background-color: #f37ed8;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
+}
 
 
 #button-box{    
@@ -43,19 +64,13 @@ img{
     background-color: #bb4da3;
 }
 
-.button-style{
-    margin-right: 15px;
-    margin-top: 20px;
-    font-size: 15px;
-    border-radius: 15px;
-    padding: 2px 20px;
-    background-color: #f794e1;
+.button-style:hover{
+    background-color: #bb4da3;
 }
 
-.hide{
-    display: none;
+#encrypt-button:hover{
+    background-color: #f37ed8;
 }
-
 
 #text-result{
     width: 300px;
@@ -68,5 +83,5 @@ img{
 
 .user-output{
     font-size: 1rem;
-    text-align: center;  
+    text-align: center;
 }
