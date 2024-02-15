@@ -2,6 +2,8 @@ let textInput = document.getElementById('textarea-style');
 let btn = document.getElementById('encrypt-button');
 let btn2 = document.getElementById('decrypt-button');
 let outputText = document.getElementById('text-result');
+let textP = document.getElementById('user-text');
+let btn3;
 
 /*toma un texto y una llave, retorna 
 un string "encriptado"*/
@@ -63,34 +65,45 @@ function emptyInputAlert(input){
     return Boolean(!input);
 }
 
+//agrega el elemento html con el resultado
+// y el boton de copiar
 function addOutput(output, text){
     output.replaceChildren();
 
+    //creando un elemento p que almacena el
+    //resultado
     const p = document.createElement('p');
     p.className = 'user-output';
+    p.id = 'user-text';
     p.innerHTML = text;
     output.appendChild(p);
+
+    //creando el botón copiar
+    const btn = document.createElement('button');
+    btn.id = 'copy-button';
+    btn.className = 'button-style';
+    btn.innerText = 'Copiar';
+    output.appendChild(btn);
+    btn3 = document.getElementById('copy-button');
+    //evento del boton copiar
+    btn3.addEventListener('click', btnCpy);
 
     output.classList.remove('hide');
 }
 
+//toma el input y lo convierte
 function getValueEncrypt(input){
 
     if(emptyInputAlert(input)){
         return;
     }
-    
-    outputText.replaceChildren();
-    
+
     let encryptedmsg = convertText(input, 'encrypt');
-
     addOutput(outputText, encryptedmsg);
-
-    console.log(encryptedmsg);
     return encryptedmsg;
 }
 
-//
+//toma el input y lo convierte
 function getValuedecrypt(input){
 
     if(emptyInputAlert(input)){
@@ -98,10 +111,14 @@ function getValuedecrypt(input){
     }
 
     let decryptedmsg = convertText(input, 'decrypt');
-    addOutput(outputText, decryptedmsg)
-
-    console.log(decryptedmsg);
+    addOutput(outputText, decryptedmsg);
     return decryptedmsg;
+}
+
+//funcion para copiar el texto
+function btnCpy(){
+    const textToCopy = document.querySelector('.user-output').innerText;
+    navigator.clipboard.writeText(textToCopy);
 }
 
 //evento del boton encriptar
@@ -117,3 +134,4 @@ btn2.addEventListener("click",  () => {
     textInput.value = '';
     textInput.focus();
     });
+
