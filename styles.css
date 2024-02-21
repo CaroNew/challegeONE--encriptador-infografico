@@ -118,3 +118,14 @@ textarea::placeholder {
         padding-left: 0px;
     }
   }
+
+@media (width < 480px) {
+    #main-style{
+        justify-content: flex-start;
+    }
+
+    #button-box{    
+        margin: 20px;
+    }
+    
+}
